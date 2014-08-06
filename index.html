@@ -1,0 +1,41 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>Hello AdMob</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<script src='cordova.js'></script>
+	<script type="text/javascript">
+		
+        var onDeviceReady=function(){
+            navigator.splashscreen.hide();
+            initAdMob();
+            showAdMob();
+		};
+		document.addEventListener("deviceready",onDeviceReady,false);
+        
+        function initAdMob(){
+            if ( window.plugins && window.plugins.AdMob ) {
+                var admob_ios_key = "ca-app-pub-2773616400896769/2194824337";
+                window.plugins.AdMob.setOptions( {
+                    publisherId: admob_ios_key,
+                    bannerAtTop: false, // set to true, to put banner at top
+                    overlap: false, // set to true, to allow banner overlap webview
+                    offsetTopBar: true, // set to true to avoid ios7 status bar overlap
+                    isTesting: false // receiving test ad
+                });
+            } else {
+                alert("AdMob plugin not ready");
+            }
+        }
+        
+        function showAdMob(){
+            window.plugins.AdMob.createBannerView();
+        }
+        
+	</script>
+</head>
+<body>
+	<h1>Hello AdMob</h1>
+</body>
+</html>

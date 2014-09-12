@@ -10,18 +10,21 @@
         var onDeviceReady=function(){
             navigator.splashscreen.hide();
             initAdMob();
-            showAdMob();
+            showAdMobBanner();
 		};
 		document.addEventListener("deviceready",onDeviceReady,false);
         
         function initAdMob(){
             if ( window.plugins && window.plugins.AdMob ) {
                 var admob_ios_key = "ca-app-pub-2773616400896769/2194824337";
+                var admob_ios_key_interstitial = "ca-app-pub-2773616400896769/5840804739";
                 window.plugins.AdMob.setOptions( {
                     publisherId: admob_ios_key,
                     bannerAtTop: false, // set to true, to put banner at top
                     overlap: false, // set to true, to allow banner overlap webview
-                    offsetTopBar: true, // set to true to avoid ios7 status bar overlap
+                    offsetTopBar: true, // set to true to avoid ios7 status bar overlap                    
+                    interstitialAdId: admob_ios_key_interstitial,
+                    autoShow: true, // autoshow intertitial Ad
                     isTesting: false // receiving test ad
                 });
             } else {
@@ -29,13 +32,20 @@
             }
         }
         
-        function showAdMob(){
+        function showAdMobBanner(){
             window.plugins.AdMob.createBannerView();
+        }
+        
+        function showAdMobInterstitial(){
+            window.plugins.AdMob.createInterstitialView();
         }
         
 	</script>
 </head>
 <body>
 	<h1>Hello AdMob</h1>
+    <br>
+    <br>
+    <button onclick="showAdMobInterstitial()">Show Interstitial Ad</button>
 </body>
 </html>

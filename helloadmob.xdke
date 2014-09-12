@@ -3,6 +3,11 @@
     "projectSettingsVersion": "1.1",
     "initialAutoPluginCount": 0,
     "projectFiles": {},
-    "projectDirectories": {}
+    "projectDirectories": {},
+    "currentService": {
+      "methodapi": "authenticate",
+      "endPoint": "Authentication",
+      "service": "instagram"
+    }
   }
 }

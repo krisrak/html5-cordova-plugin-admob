@@ -1,7 +1,7 @@
-html5-intelxdk-cordova-plugin-admob
-===================================
+Cordova AdMob
+=============
 
-__"Hello Admob"__ example created with IntelXDK using Admob Cordova plugin, which will just display an Admob banner in the simple blank App.
+__"Hello Admob"__ example created with IntelXDK using Admob Cordova plugin, which will just display an Admob banner in the simple blank App. It also shows how to display full screen add when a button is clicked.
 
 This app using the Cordova Admob plugin by [floatinghotpot](https://github.com/floatinghotpot/cordova-plugin-admob)
 
